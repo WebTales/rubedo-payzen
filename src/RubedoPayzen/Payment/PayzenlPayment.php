@@ -50,7 +50,8 @@ class PayzenPayment extends AbstractPayment
                 'help' =>  'Price'
             ),
             "vads_currency" => "978",
-            "vads_order_id" => (string) $order["id"]
+            "vads_order_id" => (string) $order["id"],
+            "vads_url_check" => "http://" . $_SERVER['HTTP_HOST'] . "/api/v1/ecommerce/payments/payzen"
         );
         $formData = $toolbox->getFormData($args);
         $form = '<form id="payzenAutoSubmitForm" action="'.$formData['form']['action'].'" method="'.$formData['form']['method'].'" accept-charset="'.$formData['form']['accept-charset'].'" class="form-horizontal">';

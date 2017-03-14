@@ -11,5 +11,8 @@ return array(
         'invokables' => array(
             'PayzenPayment' => 'RubedoPayzen\\Payment\\PayzenPayment',
         ),
-    )
+    ),
+    'namespaces_api' => array(
+        'RubedoPayzen',
+    ),
 );
