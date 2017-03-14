@@ -1,0 +1,49 @@
+[
+  {
+    "type": "Ext.form.field.Text",
+    "config": {
+      "fieldLabel": "Shop ID",
+      "name": "shopID",
+      "allowBlank": false,
+      "allowOnlyWhitespace": false
+    }
+  },
+  {
+    "type": "Ext.form.field.Text",
+    "config": {
+      "fieldLabel": "Test certificate",
+      "name": "certTest"
+    }
+  },
+  {
+    "type": "Ext.form.field.Text",
+    "config": {
+      "fieldLabel": "Production certificate",
+      "name": "certProd"
+    }
+  },
+  {
+    "type": "Ext.form.field.ComboBox",
+    "config": {
+      "fieldLabel": "Mode",
+      "name": "ctxMode",
+      "editable": false,
+      "forceSelection": true,
+      "queryMode": "local",
+      "allowBlank": false,
+      "store": [
+        "TEST",
+        "PRODUCTION"
+      ]
+    }
+  },
+  {
+    "type": "Ext.form.field.Text",
+    "config": {
+      "fieldLabel": "Platform URL",
+      "name": "platform",
+      "allowBlank": false,
+      "allowOnlyWhitespace": false
+    }
+  }
+]
