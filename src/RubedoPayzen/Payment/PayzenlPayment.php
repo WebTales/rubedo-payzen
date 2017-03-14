@@ -42,12 +42,12 @@ class PayzenPayment extends AbstractPayment
         $args = array(
             'vads_amount' => array(
                 'value' => (string) intval($centPrice),
-                'label' => 'Price',
-                'type' => 'text',
+                'label' => 'Prix',
+                'type' => 'hidden',
                 'class'  => 'vads-field',
                 'wrapper_class' => 'vads-wrapper',
                 'readonly' => true,
-                'help' =>  'Price'
+                'help' =>  'Prix'
             ),
             "vads_currency" => "978",
             "vads_order_id" => (string) $order["id"],
@@ -62,7 +62,7 @@ class PayzenPayment extends AbstractPayment
             $help = (isset($value['help']) && $value['help'] !== '' && is_array($value)) ? ' '.$value['help'] : '';
             $wrapper_class = (isset($value['wrapper_class']) && is_array($value)) ? $value['wrapper_class'] : 'hidden';
             $type = (isset($value['type']) && is_array($value) ) ? $value['type'] : 'text';
-            $help_link = '<small id="helpBlock" class="help-block">'.$help.'</small>';
+            $help_link = '';
             $addon = '';
             $addon_end = '';
             $hidden_field = '';
@@ -72,11 +72,10 @@ class PayzenPayment extends AbstractPayment
                 $amount = substr($display_value,0,-2);
                 $display_value = $amount.','.$cents;
                 $addon = '<div class="input-group">';
-                $addon_end = '<span class="glyphicon glyphicon-euro form-control-feedback" aria-hidden="true"></span></div>';
+                $addon_end = '</div>';
             }
             //$form .= $hidden_field;
             $form .= '<div class="form-group '.$wrapper_class.'">';
-            $form .= '<label for="'. $name. '" class="col-sm-2 control-label">'.$label.'</label>';
             $form .= '<div class="col-sm-10">';
             $form .= $addon;
             $form .= $hidden_field;
@@ -85,8 +84,8 @@ class PayzenPayment extends AbstractPayment
             $form .= $addon_end;
             $form .= '</div></div>';
         }
-        $form .= '<button type="submit" class="btn btn-default">Payer</button>';
-        $form .= '</form><script>document.getElementById("payzenAutoSubmitForm").submit();</script>';
+        $form .= '<button type="submit" class="btn btn-primary">Payer</button>';
+        $form .= '</form>';
         return [
             'whatToDo'=>'displayRichText',
             'richText'=>$form
