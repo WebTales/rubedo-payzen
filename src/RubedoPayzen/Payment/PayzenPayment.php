@@ -50,7 +50,7 @@ class PayzenPayment extends AbstractPayment
                 'help' =>  'Prix'
             ),
             "vads_currency" => "978",
-            "vads_order_id" => (string) $order["id"],
+            "vads_order_id" => $order["orderNumber"],
             "vads_url_check" => "http://" . $_SERVER['HTTP_HOST'] . "/api/v1/ecommerce/payments/payzen"
         );
         $formData = $toolbox->getFormData($args);
